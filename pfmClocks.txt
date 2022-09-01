@@ -1,0 +1,5037 @@
+==========================
+Basic Platform Information
+==========================
+Platform:           xdma
+File:               /opt/xilinx/platforms/xilinx_u50_xdma_201920_1/xilinx_u50_xdma_201920_1.xpfm
+Description:        This platform targets the U50 Acceleration Development Board. This high-performance acceleration platform features HBM, and Xilinx DMA Subsystem for PCI Express with PCIe Gen3 x16 connectivity.
+Unique Name:        /opt/xilinx/platforms/xilinx_u50_xdma_201920_1/xilinx_u50_xdma_201920_1.xpfm
+Vendor:             xilinx
+Version:            201920.1
+Is Unified:         1
+Is XPFM:            1
+Is Hidden:          0
+Software Emulation: 1
+Hardware Emulation: 1
+Hardware Platform File:
+/opt/xilinx/platforms/xilinx_u50_xdma_201920_1/hw/xilinx_u50_xdma_201920_1.dsa
+Software Platform File:
+/opt/xilinx/platforms/xilinx_u50_xdma_201920_1/sw/xilinx_u50_xdma_201920_1.spfm
+Platform Dir:
+/opt/xilinx/platforms/xilinx_u50_xdma_201920_1
+Platform Target Categories:
+  Category: Acceleration
+
+=====================================
+Hardware Platform (Shell) Information
+=====================================
+Vendor:                           xilinx
+Board:                            U50 (xdma)
+Name:                             xdma
+Unique Name:                      xilinx:u50:xdma:201920.1
+Pretty Name:                      U50 (xdma)
+Version:                          201920.1
+Version Major:                    201920
+Version Minor:                    1
+Generated Version:                2019.1
+Generated Change List:            2655432
+Generated Timestamp:              Sat Oct 19 03:43:09 2019
+Description:                      
+Detailed Description:             
+Is Unified:                       1
+Software Emulation:               1
+Hardware Emulation:               1
+Host Architecture:                x86_64
+Host Interface:                   pcie
+Uses PR:                          1
+Platform State:                   impl
+Top Module Name:                  pfm_top_wrapper
+Accelerator Binary Format         xclbin2
+Accelerator Binary Content        bitstream
+DCP Function Stripped             0
+Is DCP Encrypted                  0
+FPGA Family:                      virtexuplusHBM
+FPGA Device:                      xcu50
+Board Vendor:                     xilinx.com
+Board Name:                       xilinx.com:au50:1.0
+Board Part:                       xcu50-fsvh2104-2L-e
+Board Image HDPI:                 au50_image.jpg
+Board Image MDPI:                 
+Board Image LDPI:                 
+Number of DDRs:                   0
+Memory Type:                      ddr4
+Memory Size:                      8 GB
+BRAM Count:                       1344
+DSP Count:                        5952
+LUT Count:                        871680
+FF Count:                         1743360
+Register Count:                   1630351
+Hardware Bus Interface Max Width: 512
+Hardware Platform Extended JSON Metadata:
+{
+    "dsabin": {
+       "Satellite Controller Family" : "Alveo-Gen4",
+       "Card Management Controller Family" : "CMC-Gen2",  
+       "Scheduler Family" : "ERT-Gen2"
+    },
+    
+    "xclbin" :  {
+       "append_sections" : {
+            "ip_layout" : {
+               "m_count" : "32",
+               "m_ip_data" : [
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "0",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00900000",
+                     "m_name" : "AXI-LITE-HBM0"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "1",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00900000",
+                     "m_name" : "AXI-LITE-HBM1"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "2",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00920000",
+                     "m_name" : "AXI-LITE-HBM2"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "3",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00920000",
+                     "m_name" : "AXI-LITE-HBM3"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "4",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00940000",
+                     "m_name" : "AXI-LITE-HBM4"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "5",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00940000",
+                     "m_name" : "AXI-LITE-HBM5"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "6",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00960000",
+                     "m_name" : "AXI-LITE-HBM6"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "7",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00960000",
+                     "m_name" : "AXI-LITE-HBM7"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "8",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00980000",
+                     "m_name" : "AXI-LITE-HBM8"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "9",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00980000",
+                     "m_name" : "AXI-LITE-HBM9"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "10",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x009A0000",
+                     "m_name" : "AXI-LITE-HBM10"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "11",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x009A0000",
+                     "m_name" : "AXI-LITE-HBM11"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "12",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x009C0000",
+                     "m_name" : "AXI-LITE-HBM12"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "13",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x009C0000",
+                     "m_name" : "AXI-LITE-HBM13"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "14",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x009E0000",
+                     "m_name" : "AXI-LITE-HBM14"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "15",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x009E0000",
+                     "m_name" : "AXI-LITE-HBM15"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "16",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00D00000",
+                     "m_name" : "AXI-LITE-HBM16"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "17",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00D00000",
+                     "m_name" : "AXI-LITE-HBM17"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "18",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00D20000",
+                     "m_name" : "AXI-LITE-HBM18"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "19",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00D20000",
+                     "m_name" : "AXI-LITE-HBM19"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "20",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00D40000",
+                     "m_name" : "AXI-LITE-HBM20"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "21",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00D40000",
+                     "m_name" : "AXI-LITE-HBM21"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "22",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00D60000",
+                     "m_name" : "AXI-LITE-HBM22"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "23",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00D60000",
+                     "m_name" : "AXI-LITE-HBM23"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "24",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00D80000",
+                     "m_name" : "AXI-LITE-HBM24"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "25",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00D80000",
+                     "m_name" : "AXI-LITE-HBM25"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "26",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00DA0000",
+                     "m_name" : "AXI-LITE-HBM26"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "27",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00DA0000",
+                     "m_name" : "AXI-LITE-HBM27"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "28",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00DC0000",
+                     "m_name" : "AXI-LITE-HBM28"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "29",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00DC0000",
+                     "m_name" : "AXI-LITE-HBM29"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "30",
+                     "m_pc_index" : "0",
+                     "m_base_address" : "0x00DE0000",
+                     "m_name" : "AXI-LITE-HBM30"
+                  },
+                  {
+                     "m_type" : "IP_MEM_HBM",
+                     "m_index" : "31",
+                     "m_pc_index" : "1",
+                     "m_base_address" : "0x00DE0000",
+                     "m_name" : "AXI-LITE-HBM31"
+                  }
+               ]
+            }
+        }
+    },
+
+      "chipscope_debug": {
+      "debug_networks": {
+         "user": {
+            "name": "User Debug Network",
+            "pcie_pf": "1",
+            "bar_number": "0",
+            "axi_baseaddr": "0x01F40000",
+            "supports_jtag_fallback": "false",
+            "supports_microblaze_debug": "true",
+            "is_user_visible":"true"
+         },
+         "mgmt": {
+            "name": "Management Debug Network",
+            "pcie_pf": "0",
+            "bar_number": "0",
+            "axi_baseaddr": "0x00270000",
+            "supports_jtag_fallback": "true",
+            "supports_microblaze_debug": "true",
+            "is_user_visible":"false"
+         }
+      }
+   },
+   "profile_debug": {
+      "slrs": "SLR0 SLR1",
+      "host": {
+         "SLR0": "axi_data_sc/S00_AXI"
+      },
+      "axilite": {
+         "SLR0": {
+            "ip": "SLR0/interconnect_axilite_user",
+            "mi": "M00_AXI",
+            "fallback": "false"
+         },
+         "SLR1": {
+            "ip": "SLR1/interconnect_axilite_user",
+            "mi": "M00_AXI",
+            "fallback": "true"
+         }
+      },
+      "trace": {
+         "SLR0": {
+            "clk": "aclk_dma_axi",
+            "rst": "SLR1/reset_controllers/psreset_gate_pr_data/interconnect_aresetn"
+         }
+      },
+      "monitor": {
+         "SLR0": {
+            "clk": "clkwiz_kernel_clk_out1",
+            "rst": "SLR0/reset_controllers/psreset_gate_pr_kernel/peripheral_aresetn",
+            "fallback": "false"
+         },
+         "SLR1": {
+            "clk": "clkwiz_kernel_clk_out1",
+            "rst": "SLR1/reset_controllers/psreset_gate_pr_kernel/peripheral_aresetn",
+            "fallback": "true"
+         }
+      }
+   }
+}
+
+Maximum Number of Compute Units:  60
+
+=====================
+Interface Information
+=====================
+  Interface Desc: PCIe gen3x16
+  Interface Id:   int1
+  Interface Name: PCIe
+  Interface Type: gen3x16
+  PCIe Vendor Id:    0x10EE
+  PCIe Device Id:    0x5020
+  PCIe Subsystem Id: 0x000E
+  PCIe Feature Id:   
+
+=================
+Clock Information
+=================
+  Default Clock Index: 0
+  Default Clock Frequency: 300.000000
+  Default Clock Pretty Name: PL 0
+  Clock Index:         1
+    Frequency:         500.000000
+    Name:              _bd_top_clkwiz_kernel2_clk_out1
+    Pretty Name:       PL 1
+    Inst Ref:          _bd_top
+    Comp Ref:          _bd_top
+    Period:            2.000000
+    Normalized Period: .002000
+    Status:            changeable
+  Clock Index:         0
+    Frequency:         300.000000
+    Name:              _bd_top_clkwiz_kernel_clk_out1
+    Pretty Name:       PL 0
+    Inst Ref:          _bd_top
+    Comp Ref:          _bd_top
+    Period:            3.333333
+    Normalized Period: .003333
+    Status:            changeable
+
+Device Info...
+  Device Name: fpga0
+  Device Type: 8
+  Fpga Part:   virtexuplusHBM:xcu50:fsvh2104:-2L:e
+
+Dynamic Region Info...
+  Dynamic Region Name:          OCL_REGION_0
+  Dynamic Region Type:          clc_region
+  Dynamic Region Instance Path: pfm_top_i/L1/L1_URP
+  Max Compute Units:            60
+
+==========
+Valid SLRs
+==========
+SLR0, SLR1
+
+=====================
+Resource Availability
+=====================
+  =====
+  Total
+  =====
+    LUTs:  780181
+    FFs:   1630351
+    BRAMs: 1179
+    DSPs:  5948
+
+  =======
+  Per SLR
+  =======
+    SLR0:
+      LUTs:  339755
+      FFs:   679980
+      BRAMs: 478
+      DSPs:  2592
+    SLR1:
+      LUTs:  353156
+      FFs:   701216
+      BRAMs: 482
+      DSPs:  2760
+
+Resource Availability for pblock_dynamic_SLR0...
+  Resource Name & Value: 
+    BRAM:482
+    BRAM_SLR0:482
+    BRAM_SLR1:0
+    CARRY8:46752
+    CARRY8_SLR0:46962
+    CARRY8_SLR1:0
+    DSP:2592
+    DSPs_SLR0:2592
+    DSPs_SLR1:0
+    F7MUX:187198
+    F7MUX_SLR0:188038
+    F7MUX_SLR1:0
+    F8MUX:93600
+    F8MUX_SLR0:94020
+    F8MUX_SLR1:0
+    F9MUX:46800
+    F9MUX_SLR0:47010
+    F9MUX_SLR1:0
+    GLOBAL_CLOCK_BUFFERS:132
+    LUT:355605
+    LUTAsLogic:360569
+    LUTAsLogic_SLR0:362249
+    LUTAsLogic_SLR1:0
+    LUTAsMem:169276
+    LUTAsMem_SLR0:169516
+    LUTAsMem_SLR1:0
+    LUT_SLR0:357285
+    LUT_SLR1:0
+    MMCM:1
+    MMCM_SLR0:0
+    MMCM_SLR1:0
+    PLL:2
+    PLL_SLR0:0
+    PLL_SLR1:0
+    REG:704493
+    REG_SLR0:707853
+    REG_SLR1:0
+    SLL_SLR0-SLR1:20631
+    SLL_SLR1-SLR0:20877
+    URAM:304
+    URAM_SLR0:304
+    URAM_SLR1:0
+
+Resource Availability for pblock_dynamic_SLR1...
+  Resource Name & Value: 
+    BRAM:482
+    BRAM_SLR0:0
+    BRAM_SLR1:482
+    CARRY8:45986
+    CARRY8_SLR0:0
+    CARRY8_SLR1:46166
+    DSP:2760
+    DSPs_SLR0:0
+    DSPs_SLR1:2760
+    F7MUX:184078
+    F7MUX_SLR0:0
+    F7MUX_SLR1:184798
+    F8MUX:92040
+    F8MUX_SLR0:0
+    F8MUX_SLR1:92400
+    F9MUX:46020
+    F9MUX_SLR0:0
+    F9MUX_SLR1:46200
+    GLOBAL_CLOCK_BUFFERS:204
+    GTYE4_CHANNEL:4
+    GTYE4_COMMON:1
+    LUT:352942
+    LUTAsLogic:357152
+    LUTAsLogic_SLR0:0
+    LUTAsLogic_SLR1:358592
+    LUTAsMem:162830
+    LUTAsMem_SLR0:0
+    LUTAsMem_SLR1:163310
+    LUT_SLR0:0
+    LUT_SLR1:354382
+    MMCM:3
+    MMCM_SLR0:0
+    MMCM_SLR1:0
+    PLL:6
+    PLL_SLR0:0
+    PLL_SLR1:0
+    REG:699973
+    REG_SLR0:0
+    REG_SLR1:702853
+    SLL_SLR0-SLR1:20631
+    SLL_SLR1-SLR0:20877
+    URAM:304
+    URAM_SLR0:0
+    URAM_SLR1:304
+
+Resource Availability for pblock_dynamic_region...
+  Resource Name & Value: 
+    BRAM:959
+    BRAM_SLR0:478
+    BRAM_SLR1:482
+    CARRY8:92689
+    CARRY8_SLR0:46913
+    CARRY8_SLR1:46166
+    DSP:5352
+    DSPs_SLR0:2592
+    DSPs_SLR1:2760
+    F7MUX:371273
+    F7MUX_SLR0:188035
+    F7MUX_SLR1:184798
+    F8MUX:185640
+    F8MUX_SLR0:94020
+    F8MUX_SLR1:92400
+    F9MUX:92820
+    F9MUX_SLR0:47010
+    F9MUX_SLR1:46200
+    GLOBAL_CLOCK_BUFFERS:335
+    GTYE4_CHANNEL:0
+    GTYE4_COMMON:0
+    LUT:689791
+    LUTAsLogic:705465
+    LUTAsLogic_SLR0:350400
+    LUTAsLogic_SLR1:358185
+    LUTAsMem:325606
+    LUTAsMem_SLR0:163835
+    LUTAsMem_SLR1:162491
+    LUT_SLR0:339755
+    LUT_SLR1:353156
+    MMCM:4
+    MMCM_SLR0:0
+    MMCM_SLR1:0
+    PLL:8
+    PLL_SLR0:0
+    PLL_SLR1:0
+    REG:1374956
+    REG_SLR0:679980
+    REG_SLR1:701216
+    SLL_SLR0-SLR1:20631
+    SLL_SLR1-SLR0:20877
+    URAM:608
+    URAM_SLR0:304
+    URAM_SLR1:304
+
+==================
+Memory Information
+==================
+  Bus SP Tag: HBM
+    Segment Index: 0
+      Consumption: default
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 1
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 2
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 3
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 4
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 5
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 6
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 7
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 8
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 9
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 10
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 11
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 12
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 13
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 14
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 15
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 16
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 17
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 18
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 19
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 20
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 21
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 22
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 23
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 24
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 25
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 26
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 27
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 28
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 29
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 30
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+    Segment Index: 31
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 30
+  Bus SP Tag: PLRAM
+    Segment Index: 0
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 15
+    Segment Index: 1
+      Consumption: automatic
+      SLR:         SLR0
+      Max Masters: 15
+    Segment Index: 2
+      Consumption: automatic
+      SLR:         SLR1
+      Max Masters: 15
+    Segment Index: 3
+      Consumption: automatic
+      SLR:         SLR1
+      Max Masters: 15
+
+Hardware IP Parameters...
+  Hardware IP Parameter Name: NUM_SI
+    IP Param Value:           number(count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and starts-with(@xd:name,'SLR0/interconnect_axilite_user_S') and starts-with(substring(@xd:name, string-length(@xd:name)-3, 4),'_AXI')])+1)
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         'true'
+  Hardware IP Parameter Name: NUM_MI
+    IP Param Value:           number(count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and starts-with(@xd:name,'SLR0/interconnect_axilite_user_M') and starts-with(substring(@xd:name, string-length(@xd:name)-3, 4),'_AXI')])+1)
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         'true'
+  Hardware IP Parameter Name: M01_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M01_AXI'])>0
+  Hardware IP Parameter Name: M02_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M02_AXI'])>0
+  Hardware IP Parameter Name: M03_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M03_AXI'])>0
+  Hardware IP Parameter Name: M04_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M04_AXI'])>0
+  Hardware IP Parameter Name: M05_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M05_AXI'])>0
+  Hardware IP Parameter Name: M06_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M06_AXI'])>0
+  Hardware IP Parameter Name: M07_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M07_AXI'])>0
+  Hardware IP Parameter Name: M08_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M08_AXI'])>0
+  Hardware IP Parameter Name: M09_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M09_AXI'])>0
+  Hardware IP Parameter Name: M10_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M10_AXI'])>0
+  Hardware IP Parameter Name: M11_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M11_AXI'])>0
+  Hardware IP Parameter Name: M12_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M12_AXI'])>0
+  Hardware IP Parameter Name: M13_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M13_AXI'])>0
+  Hardware IP Parameter Name: M14_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M14_AXI'])>0
+  Hardware IP Parameter Name: M15_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M15_AXI'])>0
+  Hardware IP Parameter Name: M16_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M16_AXI'])>0
+  Hardware IP Parameter Name: M17_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M17_AXI'])>0
+  Hardware IP Parameter Name: M18_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M18_AXI'])>0
+  Hardware IP Parameter Name: M19_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M19_AXI'])>0
+  Hardware IP Parameter Name: M20_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M20_AXI'])>0
+  Hardware IP Parameter Name: M21_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M21_AXI'])>0
+  Hardware IP Parameter Name: M22_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M22_AXI'])>0
+  Hardware IP Parameter Name: M23_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M23_AXI'])>0
+  Hardware IP Parameter Name: M24_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M24_AXI'])>0
+  Hardware IP Parameter Name: M25_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M25_AXI'])>0
+  Hardware IP Parameter Name: M26_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M26_AXI'])>0
+  Hardware IP Parameter Name: M27_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M27_AXI'])>0
+  Hardware IP Parameter Name: M28_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M28_AXI'])>0
+  Hardware IP Parameter Name: M29_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M29_AXI'])>0
+  Hardware IP Parameter Name: M30_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR0/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR0/interconnect_axilite_user_M30_AXI'])>0
+  Hardware IP Parameter Name: NUM_SI
+    IP Param Value:           number(count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and starts-with(@xd:name,'SLR1/interconnect_axilite_user_S') and starts-with(substring(@xd:name, string-length(@xd:name)-3, 4),'_AXI')])+1)
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         'true'
+  Hardware IP Parameter Name: NUM_MI
+    IP Param Value:           number(count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and starts-with(@xd:name,'SLR1/interconnect_axilite_user_M') and starts-with(substring(@xd:name, string-length(@xd:name)-3, 4),'_AXI')])+1)
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         'true'
+  Hardware IP Parameter Name: M01_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M01_AXI'])>0
+  Hardware IP Parameter Name: M02_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M02_AXI'])>0
+  Hardware IP Parameter Name: M03_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M03_AXI'])>0
+  Hardware IP Parameter Name: M04_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M04_AXI'])>0
+  Hardware IP Parameter Name: M05_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M05_AXI'])>0
+  Hardware IP Parameter Name: M06_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M06_AXI'])>0
+  Hardware IP Parameter Name: M07_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M07_AXI'])>0
+  Hardware IP Parameter Name: M08_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M08_AXI'])>0
+  Hardware IP Parameter Name: M09_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M09_AXI'])>0
+  Hardware IP Parameter Name: M10_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M10_AXI'])>0
+  Hardware IP Parameter Name: M11_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M11_AXI'])>0
+  Hardware IP Parameter Name: M12_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M12_AXI'])>0
+  Hardware IP Parameter Name: M13_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M13_AXI'])>0
+  Hardware IP Parameter Name: M14_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M14_AXI'])>0
+  Hardware IP Parameter Name: M15_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M15_AXI'])>0
+  Hardware IP Parameter Name: M16_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M16_AXI'])>0
+  Hardware IP Parameter Name: M17_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M17_AXI'])>0
+  Hardware IP Parameter Name: M18_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M18_AXI'])>0
+  Hardware IP Parameter Name: M19_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M19_AXI'])>0
+  Hardware IP Parameter Name: M20_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M20_AXI'])>0
+  Hardware IP Parameter Name: M21_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M21_AXI'])>0
+  Hardware IP Parameter Name: M22_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M22_AXI'])>0
+  Hardware IP Parameter Name: M23_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M23_AXI'])>0
+  Hardware IP Parameter Name: M24_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M24_AXI'])>0
+  Hardware IP Parameter Name: M25_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M25_AXI'])>0
+  Hardware IP Parameter Name: M26_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M26_AXI'])>0
+  Hardware IP Parameter Name: M27_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M27_AXI'])>0
+  Hardware IP Parameter Name: M28_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M28_AXI'])>0
+  Hardware IP Parameter Name: M29_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M29_AXI'])>0
+  Hardware IP Parameter Name: M30_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M30_AXI'])>0
+  Hardware IP Parameter Name: M31_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M31_AXI'])>0
+  Hardware IP Parameter Name: M32_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M32_AXI'])>0
+  Hardware IP Parameter Name: M33_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M33_AXI'])>0
+  Hardware IP Parameter Name: M34_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M34_AXI'])>0
+  Hardware IP Parameter Name: M35_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M35_AXI'])>0
+  Hardware IP Parameter Name: M36_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M36_AXI'])>0
+  Hardware IP Parameter Name: M37_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M37_AXI'])>0
+  Hardware IP Parameter Name: M38_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M38_AXI'])>0
+  Hardware IP Parameter Name: M39_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M39_AXI'])>0
+  Hardware IP Parameter Name: M40_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M40_AXI'])>0
+  Hardware IP Parameter Name: M41_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M41_AXI'])>0
+  Hardware IP Parameter Name: M42_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M42_AXI'])>0
+  Hardware IP Parameter Name: M43_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M43_AXI'])>0
+  Hardware IP Parameter Name: M44_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M44_AXI'])>0
+  Hardware IP Parameter Name: M45_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M45_AXI'])>0
+  Hardware IP Parameter Name: M46_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M46_AXI'])>0
+  Hardware IP Parameter Name: M47_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M47_AXI'])>0
+  Hardware IP Parameter Name: M48_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M48_AXI'])>0
+  Hardware IP Parameter Name: M49_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M49_AXI'])>0
+  Hardware IP Parameter Name: M50_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M50_AXI'])>0
+  Hardware IP Parameter Name: M51_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M51_AXI'])>0
+  Hardware IP Parameter Name: M52_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M52_AXI'])>0
+  Hardware IP Parameter Name: M53_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M53_AXI'])>0
+  Hardware IP Parameter Name: M54_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M54_AXI'])>0
+  Hardware IP Parameter Name: M55_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M55_AXI'])>0
+  Hardware IP Parameter Name: M56_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M56_AXI'])>0
+  Hardware IP Parameter Name: M57_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M57_AXI'])>0
+  Hardware IP Parameter Name: M58_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M58_AXI'])>0
+  Hardware IP Parameter Name: M59_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M59_AXI'])>0
+  Hardware IP Parameter Name: M60_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M60_AXI'])>0
+  Hardware IP Parameter Name: M61_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M61_AXI'])>0
+  Hardware IP Parameter Name: M62_HAS_REGSLICE
+    IP Param Value:           1
+    IP Param Inst Ref:        SLR1/interconnect_axilite_user
+    IP Param Comp Ref:        axi_interconnect
+    IP Param IsValid:         count($designComponent/xd:connection/xd:busInterface[@xd:instanceRef=$instance and @xd:name='SLR1/interconnect_axilite_user_M62_AXI'])>0
+
+Hardware Bus Interfaces...
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M01_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M01_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M01_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M02_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M02_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M02_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M03_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M03_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M03_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M04_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M04_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M04_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M05_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M05_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M05_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M06_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M06_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M06_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M07_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M07_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M07_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M08_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M08_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M08_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M09_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M09_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M09_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M10_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M10_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M10_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M11_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M11_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M11_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M12_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M12_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M12_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M13_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M13_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M13_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M14_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M14_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M14_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M15_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M15_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M15_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M16_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M16_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M16_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M17_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M17_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M17_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M18_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M18_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M18_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M19_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M19_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M19_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M20_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M20_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M20_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M21_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M21_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M21_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M22_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M22_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M22_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M23_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M23_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M23_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M24_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M24_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M24_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M25_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M25_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M25_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M26_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M26_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M26_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M27_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M27_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M27_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M28_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M28_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M28_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M29_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M29_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M29_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M30_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M30_AXI
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M30_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M01_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M01_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M01_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M02_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M02_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M02_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M03_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M03_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M03_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M04_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M04_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M04_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M05_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M05_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M05_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M06_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M06_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M06_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M07_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M07_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M07_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M08_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M08_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M08_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M09_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M09_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M09_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M10_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M10_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M10_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M11_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M11_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M11_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M12_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M12_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M12_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M13_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M13_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M13_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M14_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M14_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M14_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M15_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M15_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M15_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M16_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M16_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M16_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M17_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M17_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M17_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M18_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M18_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M18_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M19_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M19_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M19_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M20_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M20_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M20_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M21_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M21_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M21_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M22_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M22_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M22_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M23_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M23_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M23_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M24_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M24_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M24_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M25_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M25_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M25_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M26_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M26_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M26_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M27_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M27_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M27_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M28_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M28_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M28_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M29_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M29_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M29_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M30_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M30_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M30_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M31_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M31_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M31_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M32_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M32_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M32_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M33_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M33_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M33_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M34_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M34_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M34_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M35_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M35_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M35_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M36_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M36_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M36_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M37_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M37_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M37_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M38_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M38_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M38_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M39_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M39_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M39_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M40_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M40_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M40_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M41_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M41_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M41_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M42_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M42_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M42_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M43_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M43_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M43_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M44_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M44_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M44_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M45_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M45_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M45_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M46_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M46_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M46_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M47_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M47_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M47_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M48_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M48_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M48_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M49_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M49_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M49_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M50_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M50_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M50_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M51_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M51_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M51_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M52_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M52_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M52_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M53_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M53_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M53_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M54_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M54_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M54_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M55_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M55_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M55_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M56_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M56_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M56_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M57_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M57_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M57_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M58_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M58_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M58_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M59_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M59_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M59_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M60_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M60_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M60_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M61_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M61_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M61_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M62_AXI
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    M62_AXI
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M62_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    M_AXI_GP
+    Bus SP Tag:      GP
+    Bus Data Width:  32
+    Bus Id Bits:     0
+  Hardware Bus Name: hmss_0
+    Bus Mode:        slave
+    Bus Inst Ref:    hmss_0
+    Bus Comp Ref:    hbm_memory_subsystem
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    
+    Bus Clock Ref:   __UNKNOWN__
+    Bus Reset Ref:   
+    Bus Mem Port:    memss
+    Bus SP Tag:      HBM
+    Bus Data Width:  256
+    Bus Id Bits:     0
+    Address Segment Base Name: HBM_MEM00
+      Segment Index:           0
+      Segment Memory Instance: hmss_0
+      Segment Auto:            preferred
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM01
+      Segment Index:           1
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM02
+      Segment Index:           2
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM03
+      Segment Index:           3
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM04
+      Segment Index:           4
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM05
+      Segment Index:           5
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM06
+      Segment Index:           6
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM07
+      Segment Index:           7
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM08
+      Segment Index:           8
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM09
+      Segment Index:           9
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM10
+      Segment Index:           10
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM11
+      Segment Index:           11
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM12
+      Segment Index:           12
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM13
+      Segment Index:           13
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM14
+      Segment Index:           14
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM15
+      Segment Index:           15
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM16
+      Segment Index:           16
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM17
+      Segment Index:           17
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM18
+      Segment Index:           18
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM19
+      Segment Index:           19
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM20
+      Segment Index:           20
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM21
+      Segment Index:           21
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM22
+      Segment Index:           22
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM23
+      Segment Index:           23
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM24
+      Segment Index:           24
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM25
+      Segment Index:           25
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM26
+      Segment Index:           26
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM27
+      Segment Index:           27
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM28
+      Segment Index:           28
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM29
+      Segment Index:           29
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM30
+      Segment Index:           30
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+    Address Segment Base Name: HBM_MEM31
+      Segment Index:           31
+      Segment Memory Instance: hmss_0
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     30
+  Hardware Bus Name: memory_subsystem
+    Bus Mode:        slave
+    Bus Inst Ref:    memory_subsystem
+    Bus Comp Ref:    sdx_memory_subsystem
+    Bus Type Ref:    aximm
+    Bus Intf Ref:    
+    Bus Clock Ref:   __UNKNOWN__
+    Bus Reset Ref:   
+    Bus Mem Port:    memss
+    Bus SP Tag:      PLRAM
+    Bus Data Width:  512
+    Bus Id Bits:     0
+    Address Segment Base Name: PLRAM_MEM00
+      Segment Index:           0
+      Segment Memory Instance: memory_subsystem
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     15
+    Address Segment Base Name: PLRAM_MEM01
+      Segment Index:           1
+      Segment Memory Instance: memory_subsystem
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR0
+      Segment Max Masters:     15
+    Address Segment Base Name: PLRAM_MEM02
+      Segment Index:           2
+      Segment Memory Instance: memory_subsystem
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR1
+      Segment Max Masters:     15
+    Address Segment Base Name: PLRAM_MEM03
+      Segment Index:           3
+      Segment Memory Instance: memory_subsystem
+      Segment Auto:            true
+      Segment SP Tag:          
+      Segment SLR:             SLR1
+      Segment Max Masters:     15
+  Hardware Bus Name: _bd_top_clkwiz_kernel2_clk_out1
+    Bus Mode:        master
+    Bus Inst Ref:    _bd_top
+    Bus Comp Ref:    _bd_top
+    Bus Type Ref:    clock
+    Bus Intf Ref:    clkwiz_kernel2_clk_out1
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: _bd_top_clkwiz_kernel_clk_out1
+    Bus Mode:        master
+    Bus Inst Ref:    _bd_top
+    Bus Comp Ref:    _bd_top
+    Bus Type Ref:    clock
+    Bus Intf Ref:    clkwiz_kernel_clk_out1
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M01_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M01_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M02_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M02_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M03_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M03_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M04_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M04_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M05_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M05_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M06_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M06_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M07_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M07_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M08_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M08_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M09_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M09_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M10_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M10_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M11_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M11_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M12_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M12_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M13_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M13_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M14_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M14_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M15_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M15_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M16_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M16_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M17_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M17_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M18_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M18_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M19_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M19_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M20_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M20_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M21_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M21_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M22_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M22_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M23_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M23_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M24_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M24_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M25_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M25_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M26_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M26_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M27_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M27_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M28_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M28_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M29_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M29_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M30_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M30_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M01_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M01_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M02_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M02_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M03_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M03_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M04_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M04_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M05_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M05_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M06_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M06_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M07_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M07_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M08_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M08_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M09_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M09_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M10_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M10_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M11_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M11_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M12_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M12_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M13_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M13_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M14_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M14_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M15_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M15_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M16_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M16_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M17_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M17_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M18_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M18_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M19_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M19_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M20_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M20_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M21_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M21_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M22_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M22_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M23_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M23_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M24_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M24_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M25_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M25_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M26_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M26_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M27_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M27_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M28_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M28_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M29_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M29_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M30_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M30_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M31_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M31_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M32_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M32_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M33_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M33_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M34_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M34_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M35_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M35_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M36_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M36_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M37_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M37_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M38_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M38_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M39_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M39_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M40_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M40_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M41_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M41_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M42_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M42_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M43_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M43_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M44_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M44_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M45_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M45_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M46_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M46_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M47_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M47_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M48_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M48_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M49_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M49_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M50_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M50_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M51_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M51_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M52_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M52_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M53_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M53_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M54_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M54_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M55_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M55_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M56_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M56_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M57_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M57_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M58_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M58_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M59_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M59_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M60_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M60_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M61_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M61_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M62_ACLK
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    clock
+    Bus Intf Ref:    M62_ACLK
+    Bus Clock Ref:   
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/reset_controllers/psreset_gate_pr_kernel2_peripheral_reset
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/reset_controllers/psreset_gate_pr_kernel2
+    Bus Comp Ref:    proc_sys_reset
+    Bus Type Ref:    reset
+    Bus Intf Ref:    peripheral_reset
+    Bus Clock Ref:   _bd_top_clkwiz_kernel2_clk_out1
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/reset_controllers/psreset_gate_pr_kernel2_interconnect_aresetn
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/reset_controllers/psreset_gate_pr_kernel2
+    Bus Comp Ref:    proc_sys_reset
+    Bus Type Ref:    reset
+    Bus Intf Ref:    interconnect_aresetn
+    Bus Clock Ref:   _bd_top_clkwiz_kernel2_clk_out1
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/reset_controllers/psreset_gate_pr_kernel2_peripheral_aresetn
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/reset_controllers/psreset_gate_pr_kernel2
+    Bus Comp Ref:    proc_sys_reset
+    Bus Type Ref:    reset
+    Bus Intf Ref:    peripheral_aresetn
+    Bus Clock Ref:   _bd_top_clkwiz_kernel2_clk_out1
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/reset_controllers/psreset_gate_pr_kernel2_peripheral_reset
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/reset_controllers/psreset_gate_pr_kernel2
+    Bus Comp Ref:    proc_sys_reset
+    Bus Type Ref:    reset
+    Bus Intf Ref:    peripheral_reset
+    Bus Clock Ref:   _bd_top_clkwiz_kernel2_clk_out1
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/reset_controllers/psreset_gate_pr_kernel2_interconnect_aresetn
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/reset_controllers/psreset_gate_pr_kernel2
+    Bus Comp Ref:    proc_sys_reset
+    Bus Type Ref:    reset
+    Bus Intf Ref:    interconnect_aresetn
+    Bus Clock Ref:   _bd_top_clkwiz_kernel2_clk_out1
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/reset_controllers/psreset_gate_pr_kernel2_peripheral_aresetn
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/reset_controllers/psreset_gate_pr_kernel2
+    Bus Comp Ref:    proc_sys_reset
+    Bus Type Ref:    reset
+    Bus Intf Ref:    peripheral_aresetn
+    Bus Clock Ref:   _bd_top_clkwiz_kernel2_clk_out1
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/reset_controllers/psreset_gate_pr_kernel_peripheral_reset
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/reset_controllers/psreset_gate_pr_kernel
+    Bus Comp Ref:    proc_sys_reset
+    Bus Type Ref:    reset
+    Bus Intf Ref:    peripheral_reset
+    Bus Clock Ref:   _bd_top_clkwiz_kernel_clk_out1
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/reset_controllers/psreset_gate_pr_kernel_interconnect_aresetn
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/reset_controllers/psreset_gate_pr_kernel
+    Bus Comp Ref:    proc_sys_reset
+    Bus Type Ref:    reset
+    Bus Intf Ref:    interconnect_aresetn
+    Bus Clock Ref:   _bd_top_clkwiz_kernel_clk_out1
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/reset_controllers/psreset_gate_pr_kernel_peripheral_aresetn
+    Bus Mode:        master
+    Bus Inst Ref:    SLR0/reset_controllers/psreset_gate_pr_kernel
+    Bus Comp Ref:    proc_sys_reset
+    Bus Type Ref:    reset
+    Bus Intf Ref:    peripheral_aresetn
+    Bus Clock Ref:   _bd_top_clkwiz_kernel_clk_out1
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/reset_controllers/psreset_gate_pr_kernel_peripheral_reset
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/reset_controllers/psreset_gate_pr_kernel
+    Bus Comp Ref:    proc_sys_reset
+    Bus Type Ref:    reset
+    Bus Intf Ref:    peripheral_reset
+    Bus Clock Ref:   _bd_top_clkwiz_kernel_clk_out1
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/reset_controllers/psreset_gate_pr_kernel_interconnect_aresetn
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/reset_controllers/psreset_gate_pr_kernel
+    Bus Comp Ref:    proc_sys_reset
+    Bus Type Ref:    reset
+    Bus Intf Ref:    interconnect_aresetn
+    Bus Clock Ref:   _bd_top_clkwiz_kernel_clk_out1
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/reset_controllers/psreset_gate_pr_kernel_peripheral_aresetn
+    Bus Mode:        master
+    Bus Inst Ref:    SLR1/reset_controllers/psreset_gate_pr_kernel
+    Bus Comp Ref:    proc_sys_reset
+    Bus Type Ref:    reset
+    Bus Intf Ref:    peripheral_aresetn
+    Bus Clock Ref:   _bd_top_clkwiz_kernel_clk_out1
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M01_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M01_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M01_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M02_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M02_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M02_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M03_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M03_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M03_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M04_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M04_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M04_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M05_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M05_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M05_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M06_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M06_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M06_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M07_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M07_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M07_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M08_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M08_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M08_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M09_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M09_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M09_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M10_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M10_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M10_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M11_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M11_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M11_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M12_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M12_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M12_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M13_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M13_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M13_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M14_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M14_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M14_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M15_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M15_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M15_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M16_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M16_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M16_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M17_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M17_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M17_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M18_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M18_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M18_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M19_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M19_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M19_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M20_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M20_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M20_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M21_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M21_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M21_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M22_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M22_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M22_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M23_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M23_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M23_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M24_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M24_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M24_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M25_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M25_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M25_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M26_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M26_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M26_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M27_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M27_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M27_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M28_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M28_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M28_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M29_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M29_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M29_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR0/interconnect_axilite_user_M30_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR0/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M30_ARESETN
+    Bus Clock Ref:   SLR0/interconnect_axilite_user_M30_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M01_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M01_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M01_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M02_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M02_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M02_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M03_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M03_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M03_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M04_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M04_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M04_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M05_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M05_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M05_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M06_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M06_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M06_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M07_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M07_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M07_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M08_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M08_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M08_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M09_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M09_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M09_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M10_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M10_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M10_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M11_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M11_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M11_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M12_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M12_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M12_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M13_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M13_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M13_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M14_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M14_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M14_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M15_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M15_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M15_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M16_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M16_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M16_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M17_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M17_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M17_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M18_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M18_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M18_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M19_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M19_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M19_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M20_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M20_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M20_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M21_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M21_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M21_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M22_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M22_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M22_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M23_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M23_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M23_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M24_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M24_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M24_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M25_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M25_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M25_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M26_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M26_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M26_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M27_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M27_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M27_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M28_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M28_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M28_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M29_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M29_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M29_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M30_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M30_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M30_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M31_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M31_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M31_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M32_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M32_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M32_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M33_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M33_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M33_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M34_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M34_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M34_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M35_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M35_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M35_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M36_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M36_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M36_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M37_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M37_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M37_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M38_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M38_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M38_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M39_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M39_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M39_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M40_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M40_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M40_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M41_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M41_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M41_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M42_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M42_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M42_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M43_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M43_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M43_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M44_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M44_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M44_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M45_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M45_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M45_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M46_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M46_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M46_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M47_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M47_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M47_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M48_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M48_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M48_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M49_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M49_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M49_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M50_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M50_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M50_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M51_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M51_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M51_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M52_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M52_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M52_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M53_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M53_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M53_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M54_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M54_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M54_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M55_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M55_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M55_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M56_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M56_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M56_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M57_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M57_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M57_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M58_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M58_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M58_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M59_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M59_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M59_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M60_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M60_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M60_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M61_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M61_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M61_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+  Hardware Bus Name: SLR1/interconnect_axilite_user_M62_ARESETN
+    Bus Mode:        slave
+    Bus Inst Ref:    SLR1/interconnect_axilite_user
+    Bus Comp Ref:    axi_interconnect
+    Bus Type Ref:    reset
+    Bus Intf Ref:    M62_ARESETN
+    Bus Clock Ref:   SLR1/interconnect_axilite_user_M62_ACLK
+    Bus Reset Ref:   
+    Bus Mem Port:    
+    Bus SP Tag:      
+    Bus Data Width:  0
+    Bus Id Bits:     0
+
+=======================
+Feature ROM Information
+=======================
+  ROM Major Version:       10
+  ROM Minor Version:       1
+  ROM Vivado Build ID:     2655432
+  ROM IP Build ID:         2614713
+  ROM Time Since Epoch:    1571453167
+  ROM FPGA Part Name:      xcu50-fsvh2104-2L-e
+  ROM VBNV Name:           xilinx_u50_xdma_201920_1
+  ROM DDR Channel Count:   0
+  ROM DDR Channel Size:    0
+  ROM DR Base Address:     0
+  ROM Feature Bit Map:     131597
+  ROM UUID:                b6ac0f32-ef98-4938-924a-7bb9811b3909
+  ROM CDMA Base Address 0: 0
+  ROM CDMA Base Address 1: 0
+  ROM CDMA Base Address 2: 0
+  ROM CDMA Base Address 3: 0
+
+Hardware Platform Archive Files
+  File Type & Name: EMU_XML : emu/emu.xml
+  File Type & Name: POST_OPT_TCL : tcl_hooks/dynamic_postopt.tcl
+  File Type & Name: POST_ROUTE_TCL : tcl_hooks/dynamic_postroute.tcl
+  File Type & Name: PRE_SYS_LINK_TCL : tcl_hooks/dynamic_prelink.tcl
+  File Type & Name: POST_SYS_LINK_TCL : tcl_hooks/dynamic_postlink.tcl
+  File Type & Name: SYNTH_CONSTRS : tcl_hooks/dynamic_impl.xdc
+  File Type & Name: BB_LOCKED_IMPL_DCP : xilinx_u50_xdma_201920_1_bb_locked.dcp
+  File Type & Name: FULL_BIT : xilinx_u50_xdma_201920_1.bit
+  File Type & Name: PARTIAL_BIT : xilinx_u50_xdma_201920_1_pblock_dynamic_region_partial.bit
+  File Type & Name: MCS : xilinx_u50_xdma_201920_1.mcs
+  File Type & Name: HPFM : xilinx_u50_xdma_201920_1.hpfm
+  File Type & Name: DR_BD : bd/pfm_dynamic.bd
+  File Type & Name: IP_REPO_PATH : iprepo
+  File Type & Name: IP_CACHE_DIR : ipcache
+  File Type & Name: BOARD_REPO_PATH : board
+  File Type & Name: NOC_TRAFFIC : xilinx_u50_xdma_201920_1_noc_traffic.nts
+  File Type & Name: META_JSON : ext_metadata.json
+
+=============================
+Software Platform Information
+=============================
+Number of Runtimes:            1
+Default System Configuration:  config0_0
+System Configurations:
+  System Config Name:                      config0_0
+  System Config Description:               config0_0 Linux OS on x86_0
+  System Config Default Processor Group:   x86_0
+  System Config Default Boot Image:        
+  System Config Is QEMU Supported:         0
+  System Config Processor Groups:
+    Processor Group Name:      x86_0
+    Processor Group CPU Type:  x86
+    Processor Group OS Name:   Linux OS
+  System Config Boot Images:
+Supported Runtimes:
+  Runtime: OpenCL
+

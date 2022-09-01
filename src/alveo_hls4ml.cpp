@@ -38,7 +38,43 @@ Description:
 
 
 extern "C" {
-
+void read_node_attr(const input_t *node_attr_in,input_t node_attr_in_bigbuf[N_NODE_GROUP][N_NODE_LAYER*NODE_DIM]){
+	for (int i = 0; i < N_NODE_LAYER*NODE_DIM; i++) {
+		#pragma HLS PIPELINE
+		for(int j=0;j<N_NODE_GROUP;j++){
+			#pragma HLS UNROLL
+			node_attr_in_bigbuf[j][i] = node_attr_in[j*N_NODE_LAYER*NODE_DIM+i];
+		}
+	}
+}
+void read_edge_attr(const input3_t *edge_attr_in,input3_t edge_attr_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*EDGE_DIM]){
+	
+	for (int i = 0; i < N_EDGE_LAYER*EDGE_DIM; i++) {
+		#pragma HLS PIPELINE
+		for(int j=0;j<N_EDGE_GROUP;j++){
+			#pragma HLS UNROLL
+			edge_attr_in_bigbuf[j][i] = edge_attr_in[j*N_EDGE_LAYER*EDGE_DIM+i];
+		}
+	}
+}
+void read_edge_index(const input4_t *edge_index_in,input4_t edge_index_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*TWO]){
+	for (int i = 0; i < N_EDGE_LAYER*TWO; i++) {
+		#pragma HLS PIPELINE
+		for(int j=0;j<N_EDGE_GROUP;j++){
+			#pragma HLS UNROLL
+			edge_index_in_bigbuf[j][i] = edge_index_in[j*N_EDGE_LAYER*TWO+i];
+		}
+	}
+}
+void write_output(layer11_t *out,layer11_t out_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*LAYER11_OUT_DIM]){
+	for (int i = 0; i < N_EDGE_LAYER*LAYER11_OUT_DIM; i++) {
+		#pragma HLS PIPELINE
+		for(int j=0;j<N_EDGE_GROUP;j++){
+			#pragma HLS UNROLL
+			out[j*N_EDGE_LAYER*LAYER11_OUT_DIM+i] = out_bigbuf[j][i];
+		}
+	}
+}
 void alveo_hls4ml(
 	const input_t *node_attr_in, // Read-Only Vector
 	const input3_t *edge_attr_in, // Read-Only Vector
@@ -56,6 +92,10 @@ void alveo_hls4ml(
     #pragma HLS INTERFACE s_axilite port=edge_index_in bundle=control
     #pragma HLS INTERFACE s_axilite port=out bundle=control
     #pragma HLS INTERFACE s_axilite port=return bundle=control
+	#pragma HLS data_pack variable=node_attr_in
+	#pragma HLS data_pack variable=edge_attr_in
+	#pragma HLS data_pack variable=edge_index_in
+	#pragma HLS data_pack variable=out
 	//necessary for hls4ml kernel, not used
 	#pragma HLS DATAFLOW
 
@@ -63,13 +103,16 @@ void alveo_hls4ml(
 	input3_t edge_attr_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*EDGE_DIM];
 	input4_t edge_index_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*TWO];
 	layer11_t out_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*LAYER11_OUT_DIM];
-	
+	#pragma HLS data_pack variable=node_attr_in_bigbuf
+	#pragma HLS data_pack variable=edge_attr_in_bigbuf
+	#pragma HLS data_pack variable=edge_index_in_bigbuf
+	#pragma HLS data_pack variable=out_bigbuf	
 	
 	//getting data from DRAM
 	// for (int i = 0; i < N_NODE_LAYER*NODE_DIM; i++) {
 	// 	for(int j=0;j<N_NODE_GROUP;j++){
 	// 		#pragma HLS UNROLL
-	// 		node_attr_in_bigbuf[j][i] = node_attr_in[i*N_NODE_GROUP+j];
+	// 		node_atrt_in_bigbuf[j][i] = node_attr_in[i*N_NODE_GROUP+j];
 	// 	}
 	// }
 	// for (int i = 0; i < N_EDGE_LAYER*EDGE_DIM; i++) {
@@ -84,24 +127,11 @@ void alveo_hls4ml(
 	// 		edge_index_in_bigbuf[j][i] = edge_index_in[i*N_EDGE_GROUP+j];
 	// 	}
 	// }
-	for(int j=0;j<N_NODE_GROUP;j++){
-		for (int i = 0; i < N_NODE_LAYER*NODE_DIM; i++) {
-			#pragma HLS PIPELINE
-			node_attr_in_bigbuf[j][i] = node_attr_in[j*N_NODE_LAYER*NODE_DIM+i];
-		}
-	}
-	for(int j=0;j<N_EDGE_GROUP;j++){
-		for (int i = 0; i < N_EDGE_LAYER*EDGE_DIM; i++) {
-			#pragma HLS PIPELINE
-			edge_attr_in_bigbuf[j][i] = edge_attr_in[j*N_EDGE_LAYER*EDGE_DIM+i];
-		}
-	}
-	for(int j=0;j<N_EDGE_GROUP;j++){
-		for (int i = 0; i < N_EDGE_LAYER*TWO; i++) {
-			#pragma HLS PIPELINE
-			edge_index_in_bigbuf[j][i] = edge_index_in[j*N_EDGE_LAYER*TWO+i];
-		}
-	}
+	read_node_attr(node_attr_in,node_attr_in_bigbuf);
+	read_edge_attr(edge_attr_in,edge_attr_in_bigbuf);
+	read_edge_index(edge_index_in,edge_index_in_bigbuf);
+
+
 	std::cout<<"------------------"<<std::endl;
 	//=============================================
 	//input
@@ -109,11 +139,7 @@ void alveo_hls4ml(
 	std::cout<<"inf start"<<std::endl;
 	myproject(node_attr_in_bigbuf,edge_attr_in_bigbuf,edge_index_in_bigbuf,out_bigbuf);
 	std::cout<<"inf end"<<std::endl;
-	for(int j=0;j<N_EDGE_GROUP;j++){
-	for (int i = 0; i < N_EDGE_LAYER*LAYER11_OUT_DIM; i++) {
-			out[j*N_EDGE_LAYER*LAYER11_OUT_DIM+i] = out_bigbuf[j][i];
-		}
-	}
+	write_output(out,out_bigbuf);
 	//=============================================
 	//output
 	//=============================================

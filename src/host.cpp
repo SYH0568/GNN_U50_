@@ -151,7 +151,8 @@ int main(int argc, char** argv)
 //=====================
 //input
 //=====================
-  std::string in_data;  
+for(int e=0;e<10;e++){
+std::string in_data;  
   in_data = datadir+"/test_graph/graph1/input_data.txt";
   std::ifstream fin(in_data);
   std::string out_data;  
@@ -250,6 +251,8 @@ int main(int argc, char** argv)
 	}
 	std::cout << std::endl;
 	std::cout<<"---- END EVENT "<<" ----"<<std::endl;
+}
+  
 	return EXIT_SUCCESS;
 
 }
