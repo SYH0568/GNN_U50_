@@ -1,3 +1,5 @@
+#ifndef DEFINES_H_
+#define DEFINES_H_
 #include "ap_int.h"
 #include "ap_fixed.h"
 typedef ap_fixed<16,8> input_t;
@@ -27,3 +29,21 @@ typedef ap_fixed<8,5> model_default_t;
 #define PAR_FACTOR 1
 #define N_NODE_GROUP 11
 #define N_EDGE_GROUP 13
+#define N_GRAPH 10
+struct NODE_GROUP
+{
+    input_t layer[16];
+};
+struct EDGE_GROUP
+{
+    input3_t layer[16];
+};
+struct INDEX_GROUP
+{
+    input4_t layer[16];
+};
+struct OUT_GROUP
+{
+    layer11_t layer[16];
+};
+#endif
