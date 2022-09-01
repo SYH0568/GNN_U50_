@@ -38,49 +38,49 @@ Description:
 
 
 extern "C" {
-void read_node_attr(const input_t *node_attr_in,input_t node_attr_in_bigbuf[N_NODE_GROUP][N_NODE_LAYER*NODE_DIM]){
+void read_node_attr(const NODE_GROUP *node_attr_in,input_t node_attr_in_bigbuf[N_NODE_GROUP][N_NODE_LAYER*NODE_DIM],int g){
 	for (int i = 0; i < N_NODE_LAYER*NODE_DIM; i++) {
 		#pragma HLS PIPELINE
 		for(int j=0;j<N_NODE_GROUP;j++){
 			#pragma HLS UNROLL
-			node_attr_in_bigbuf[j][i] = node_attr_in[j*N_NODE_LAYER*NODE_DIM+i];
+			node_attr_in_bigbuf[j][i] = node_attr_in[g*N_NODE_LAYER*NODE_DIM+i].layer[j];
 		}
 	}
 }
-void read_edge_attr(const input3_t *edge_attr_in,input3_t edge_attr_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*EDGE_DIM]){
+void read_edge_attr(const EDGE_GROUP *edge_attr_in,input3_t edge_attr_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*EDGE_DIM],int g){
 	
 	for (int i = 0; i < N_EDGE_LAYER*EDGE_DIM; i++) {
 		#pragma HLS PIPELINE
 		for(int j=0;j<N_EDGE_GROUP;j++){
 			#pragma HLS UNROLL
-			edge_attr_in_bigbuf[j][i] = edge_attr_in[j*N_EDGE_LAYER*EDGE_DIM+i];
+			edge_attr_in_bigbuf[j][i] = edge_attr_in[g* N_EDGE_LAYER*EDGE_DIM+i].layer[j];
 		}
 	}
 }
-void read_edge_index(const input4_t *edge_index_in,input4_t edge_index_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*TWO]){
+void read_edge_index(const INDEX_GROUP *edge_index_in,input4_t edge_index_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*TWO],int g){
 	for (int i = 0; i < N_EDGE_LAYER*TWO; i++) {
 		#pragma HLS PIPELINE
 		for(int j=0;j<N_EDGE_GROUP;j++){
 			#pragma HLS UNROLL
-			edge_index_in_bigbuf[j][i] = edge_index_in[j*N_EDGE_LAYER*TWO+i];
+			edge_index_in_bigbuf[j][i] = edge_index_in[g*N_EDGE_LAYER*TWO+i].layer[j];
 		}
 	}
 }
-void write_output(layer11_t *out,layer11_t out_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*LAYER11_OUT_DIM]){
+void write_output(OUT_GROUP *out,layer11_t out_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*LAYER11_OUT_DIM],int g){
 	for (int i = 0; i < N_EDGE_LAYER*LAYER11_OUT_DIM; i++) {
 		#pragma HLS PIPELINE
 		for(int j=0;j<N_EDGE_GROUP;j++){
 			#pragma HLS UNROLL
-			out[j*N_EDGE_LAYER*LAYER11_OUT_DIM+i] = out_bigbuf[j][i];
+			out[g*N_EDGE_LAYER*LAYER11_OUT_DIM+i].layer[j] = out_bigbuf[j][i];
 		}
 	}
 }
 void alveo_hls4ml(
-	const input_t *node_attr_in, // Read-Only Vector
-	const input3_t *edge_attr_in, // Read-Only Vector
-	const input4_t *edge_index_in, // Read-Only Vector
+	const NODE_GROUP *node_attr_in, // Read-Only Vector
+	const EDGE_GROUP *edge_attr_in, // Read-Only Vector
+	const INDEX_GROUP *edge_index_in, // Read-Only Vector
 
-	layer11_t *out       // Output Result
+	OUT_GROUP *out       // Output Result
 	)
 {
     #pragma HLS INTERFACE m_axi port=node_attr_in bundle=gmem0
@@ -103,10 +103,6 @@ void alveo_hls4ml(
 	input3_t edge_attr_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*EDGE_DIM];
 	input4_t edge_index_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*TWO];
 	layer11_t out_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*LAYER11_OUT_DIM];
-	#pragma HLS data_pack variable=node_attr_in_bigbuf
-	#pragma HLS data_pack variable=edge_attr_in_bigbuf
-	#pragma HLS data_pack variable=edge_index_in_bigbuf
-	#pragma HLS data_pack variable=out_bigbuf	
 	
 	//getting data from DRAM
 	// for (int i = 0; i < N_NODE_LAYER*NODE_DIM; i++) {
@@ -127,9 +123,12 @@ void alveo_hls4ml(
 	// 		edge_index_in_bigbuf[j][i] = edge_index_in[i*N_EDGE_GROUP+j];
 	// 	}
 	// }
-	read_node_attr(node_attr_in,node_attr_in_bigbuf);
-	read_edge_attr(edge_attr_in,edge_attr_in_bigbuf);
-	read_edge_index(edge_index_in,edge_index_in_bigbuf);
+	for(int i=0;i<N_GRAPH;i++){
+		#pragma HLS DATAFLOW
+		#pragma HLS INLINE
+	read_node_attr(node_attr_in,node_attr_in_bigbuf,i);
+	read_edge_attr(edge_attr_in,edge_attr_in_bigbuf,i);
+	read_edge_index(edge_index_in,edge_index_in_bigbuf,i);
 
 
 	std::cout<<"------------------"<<std::endl;
@@ -139,7 +138,9 @@ void alveo_hls4ml(
 	std::cout<<"inf start"<<std::endl;
 	myproject(node_attr_in_bigbuf,edge_attr_in_bigbuf,edge_index_in_bigbuf,out_bigbuf);
 	std::cout<<"inf end"<<std::endl;
-	write_output(out,out_bigbuf);
+	write_output(out,out_bigbuf,i);
+	}
+
 	//=============================================
 	//output
 	//=============================================

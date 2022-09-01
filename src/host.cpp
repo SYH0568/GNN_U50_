@@ -49,37 +49,45 @@ int main(int argc, char** argv)
 	if (argc > 3) datadir = argv[3];
     std::cout << "Will run " << nevents << " time(s), using " << datadir << " to get input features and output predictions (tb_input_features.dat and tb_output_predictions.dat)" << std::endl;
 
-    size_t vector_size_node_attr_in_bytes = sizeof(input_t) *N_NODE_GROUP*N_NODE_LAYER*NODE_DIM;
-    size_t vector_size_edge_attr_in_bytes = sizeof(input3_t) *N_EDGE_GROUP*N_EDGE_LAYER*EDGE_DIM;
-    size_t vector_size_edge_index_in_bytes = sizeof(input4_t) *N_EDGE_GROUP*N_EDGE_LAYER*TWO;
-    size_t vector_size_out_bytes = sizeof(layer11_t) *N_EDGE_GROUP*N_EDGE_LAYER*LAYER11_OUT_DIM;
+    size_t vector_size_node_attr_in_bytes = sizeof(NODE_GROUP) *N_NODE_LAYER*NODE_DIM*N_GRAPH;
+    size_t vector_size_edge_attr_in_bytes = sizeof(EDGE_GROUP) *N_EDGE_LAYER*EDGE_DIM*N_GRAPH;
+    size_t vector_size_edge_index_in_bytes = sizeof(INDEX_GROUP) *N_EDGE_LAYER*TWO*N_GRAPH;
+    size_t vector_size_out_bytes = sizeof(OUT_GROUP) *N_EDGE_LAYER*LAYER11_OUT_DIM*N_GRAPH;
     // Allocate Memory in Host Memory
     // When creating a buffer with user pointer (CL_MEM_USE_HOST_PTR), under the hood user ptr 
     // is used if it is properly aligned. when not aligned, runtime had no choice but to create
     // its own host side buffer. So it is recommended to use this allocator if user wish to
     // create buffer using CL_MEM_USE_HOST_PTR to align user buffer to page boundary. It will 
     // ensure that user buffer is used when user create Buffer/Mem object with CL_MEM_USE_HOST_PTR 
-    std::vector<input_t,aligned_allocator<input_t>> source_hw_node_attr_in(N_NODE_GROUP*N_NODE_LAYER*NODE_DIM);
-    std::vector<input3_t,aligned_allocator<input3_t>> source_hw_edge_attr_in(N_EDGE_GROUP*N_EDGE_LAYER*EDGE_DIM);
-    std::vector<input4_t,aligned_allocator<input4_t>> source_hw_edge_index_in(N_EDGE_GROUP*N_EDGE_LAYER*TWO);
-    std::vector<layer11_t,aligned_allocator<layer11_t>> source_hw_results(N_EDGE_GROUP*N_EDGE_LAYER*LAYER11_OUT_DIM);
+    std::vector<NODE_GROUP,aligned_allocator<NODE_GROUP>> source_hw_node_attr_in(N_NODE_LAYER*NODE_DIM*N_GRAPH);
+    std::vector<EDGE_GROUP,aligned_allocator<EDGE_GROUP>> source_hw_edge_attr_in(N_EDGE_LAYER*EDGE_DIM*N_GRAPH);
+    std::vector<INDEX_GROUP,aligned_allocator<INDEX_GROUP>> source_hw_edge_index_in(N_EDGE_LAYER*TWO*N_GRAPH);
+    std::vector<OUT_GROUP,aligned_allocator<OUT_GROUP>> source_hw_results(N_EDGE_LAYER*LAYER11_OUT_DIM*N_GRAPH);
 
 	//Reset the input data
-	for(int i0 = 0; i0 < N_NODE_GROUP*N_NODE_LAYER*NODE_DIM; i0++) { 
-		source_hw_node_attr_in[i0] = 0;
+	for(int i0 = 0; i0 < N_NODE_LAYER*NODE_DIM*N_GRAPH; i0++) { 
+    for(int j=0;j<N_NODE_GROUP;j++){
+		  source_hw_node_attr_in[i0].layer[j] = 0;
+    }
 		//std::cout<<(double)fpga.source_in[i0]<<std::endl;
 	}
-	for(int i0 = 0; i0 < N_EDGE_GROUP*N_EDGE_LAYER*EDGE_DIM; i0++) { 
-		source_hw_edge_attr_in[i0] = 0;
+	for(int i0 = 0; i0 < N_EDGE_LAYER*EDGE_DIM*N_GRAPH; i0++) { 
+    for(int j=0;j<N_EDGE_GROUP;j++){
+      source_hw_edge_attr_in[i0].layer[j] = 0;
+    }
 		//std::cout<<(double)fpga.source_in[i0]<<std::endl;
 	}
-	for(int i0 = 0; i0 < N_EDGE_GROUP*N_EDGE_LAYER*TWO; i0++) { 
-		source_hw_edge_index_in[i0] = 0;
+	for(int i0 = 0; i0 < N_EDGE_LAYER*TWO*N_GRAPH; i0++) { 
+    for(int j=0;j<N_EDGE_GROUP;j++){
+		  source_hw_edge_index_in[i0].layer[j] = 0;
+    }
 		//std::cout<<(double)fpga.source_in[i0]<<std::endl;
 	}
 	//Reset the output result
-		for(int i0 = 0; i0 < N_EDGE_GROUP*N_EDGE_LAYER*LAYER11_OUT_DIM; i0++) { 
-		source_hw_results[i0] = 0;
+		for(int i0 = 0; i0 < N_EDGE_LAYER*LAYER11_OUT_DIM*N_GRAPH; i0++) { 
+      for(int j=0;j<N_EDGE_GROUP;j++){
+		    source_hw_results[i0].layer[j] = 0;
+      }
 		//std::cout<<(double)fpga.source_in[i0]<<std::endl;
 	}
 
@@ -151,8 +159,8 @@ int main(int argc, char** argv)
 //=====================
 //input
 //=====================
-for(int e=0;e<10;e++){
-std::string in_data;  
+for(int e=0;e<N_GRAPH;e++){
+  std::string in_data;  
   in_data = datadir+"/test_graph/graph1/input_data.txt";
   std::ifstream fin(in_data);
   std::string out_data;  
@@ -173,51 +181,57 @@ std::string in_data;
       current=strtok(NULL," ");
     }
 	fin.close();
-	for(int j=0;j<N_NODE_GROUP;j++){
-		for (int i = 0; i < N_NODE_LAYER*NODE_DIM; i++) {
-			source_hw_node_attr_in[j*N_NODE_LAYER*NODE_DIM+i] = in[j*N_NODE_LAYER*NODE_DIM+i];
+
+	for (int i = 0; i < N_NODE_LAYER*NODE_DIM; i++) {
+    for(int j=0;j<N_NODE_GROUP;j++){
+			source_hw_node_attr_in[e*N_NODE_LAYER*NODE_DIM+i].layer[j] = in[j*N_NODE_LAYER*NODE_DIM+i];
 		}
 	}
-	for(int j=0;j<N_EDGE_GROUP;j++){
-		for (int i = 0; i < N_EDGE_LAYER*EDGE_DIM; i++) {
-			source_hw_edge_attr_in[j*N_EDGE_LAYER*EDGE_DIM+i] = in[N_NODE*NODE_DIM+j*N_EDGE_LAYER*EDGE_DIM+i];
+	
+	for (int i = 0; i < N_EDGE_LAYER*EDGE_DIM; i++) {
+    for(int j=0;j<N_EDGE_GROUP;j++){
+			source_hw_edge_attr_in[e* N_EDGE_LAYER*EDGE_DIM+i].layer[j] = in[N_NODE*NODE_DIM+j*N_EDGE_LAYER*EDGE_DIM+i];
 		}
 	}
-	for(int j=0;j<N_EDGE_GROUP;j++){
-		for (int i = 0; i < N_EDGE_LAYER*TWO; i++) {
-			source_hw_edge_index_in[j*N_EDGE_LAYER*TWO+i] = in[N_NODE*NODE_DIM + N_EDGE*EDGE_DIM+j*N_EDGE_LAYER*TWO+i];
+	
+	for (int i = 0; i < N_EDGE_LAYER*TWO; i++) {
+    for(int j=0;j<N_EDGE_GROUP;j++){
+			source_hw_edge_index_in[e*N_EDGE_LAYER*TWO+i].layer[j] = in[N_NODE*NODE_DIM + N_EDGE*EDGE_DIM+j*N_EDGE_LAYER*TWO+i];
     }
 	}
-	for(int j = 0 ; j < N_EDGE_GROUP*N_EDGE_LAYER*LAYER11_OUT_DIM ; j++){
-		source_hw_results[j] = 0;
+	for(int i = 0 ; i < N_EDGE_LAYER*LAYER11_OUT_DIM ; i++){
+    for(int j=0;j<N_EDGE_GROUP;j++){
+		source_hw_results[e*N_EDGE_LAYER*LAYER11_OUT_DIM+i].layer[j] = 0;
 	}
+  }
   }
   // Declare streams
   else{
     std::cout<<"ERROR: cannot load intput file\n";
   }
-  if(fout.is_open()){
-    std::cout<<"load with "<<out_data<<" \n";
-    std::getline(fout,iline);
-    char* cstr=const_cast<char*>(iline.c_str());
-    char* current;
-    std::vector<float> in;
-    current=strtok(cstr," ");
-    while(current!=NULL) {
-      in.push_back(atof(current));
-      current=strtok(NULL," ");
-    }
-	for(int j=0;j<N_EDGE_GROUP;j++){
-		for (int i = 0; i < N_EDGE_LAYER*LAYER11_OUT_DIM; i++) {
-			golden_target[j*N_EDGE_LAYER*LAYER11_OUT_DIM+i] = in[j*N_EDGE_LAYER*LAYER11_OUT_DIM+i];
-		}
-	}
-    fout.close();
-  }
+}
+  // if(fout.is_open()){
+  //   std::cout<<"load with "<<out_data<<" \n";
+  //   std::getline(fout,iline);
+  //   char* cstr=const_cast<char*>(iline.c_str());
+  //   char* current;
+  //   std::vector<float> in;
+  //   current=strtok(cstr," ");
+  //   while(current!=NULL) {
+  //     in.push_back(atof(current));
+  //     current=strtok(NULL," ");
+  //   }
+	// for(int j=0;j<N_EDGE_GROUP;j++){
+	// 	for (int i = 0; i < N_EDGE_LAYER*LAYER11_OUT_DIM; i++) {
+	// 		golden_target[j*N_EDGE_LAYER*LAYER11_OUT_DIM+i] = in[j*N_EDGE_LAYER*LAYER11_OUT_DIM+i];
+	// 	}
+	// }
+  //   fout.close();
+  // }
   // Declare streams
-  else{
-    std::cout<<"ERROR: cannot load output file\n";
-  }
+  // else{
+  //   std::cout<<"ERROR: cannot load output file\n";
+  // }
         t1 = Clock::now();
         // Copy input data to device global memory
         q.enqueueMigrateMemObjects({buffer_node_attr_in,buffer_edge_attr_in,buffer_edge_index_in},0/* 0 means from host*/);
@@ -237,22 +251,26 @@ std::string in_data;
 //=====================
 //output result
 //=====================
-	for(int i=0;i<N_EDGE_GROUP*N_EDGE_LAYER*LAYER11_OUT_DIM ;i++){
-		if( golden_target[i] - source_hw_results[i]<-1 || golden_target[i] - source_hw_results[i]>1)
-		std::cout << golden_target[i] << " "<<source_hw_results[i];
-	}
+	// for(int i=0;i<N_EDGE_LAYER*LAYER11_OUT_DIM ;i++){
+  //   for(int j=0;j<N_EDGE_GROUP;j++)
+	// 	if( golden_target[j*N_EDGE_LAYER*LAYER11_OUT_DIM+i] - source_hw_results[i].layer[j]<-0.5 || golden_target[j*N_EDGE_LAYER*LAYER11_OUT_DIM+i] - source_hw_results[i].layer[j]>0.5)
+	// 	std::cout << golden_target[j*N_EDGE_LAYER*LAYER11_OUT_DIM+i] << " "<<source_hw_results[i].layer[j];
+	// }
 	// for(int i=0;i<N_EDGE_GROUP*N_EDGE_LAYER*LAYER11_OUT_DIM ;i++){
 	// 	std::cout << golden_target[i] << " ";
 	// }
-	
+	for(int e=0;e<N_GRAPH;e++){
 	std::cout<<"Quantized predictions: \n";
-	for(int i=0;i<N_EDGE_GROUP*N_EDGE_LAYER*LAYER11_OUT_DIM ;i++){
-		std::cout << source_hw_results[i]<< " ";
+	for(int i=0;i<N_EDGE_LAYER*LAYER11_OUT_DIM ;i++){
+    for(int j=0;j<N_EDGE_GROUP;j++){
+      std::cout << source_hw_results[e*N_EDGE_LAYER*LAYER11_OUT_DIM+i].layer[j]<< " ";
+    }
+		
 	}
-	std::cout << std::endl;
-	std::cout<<"---- END EVENT "<<" ----"<<std::endl;
-}
-  
+  }
+	// std::cout << std::endl;
+	// std::cout<<"---- END EVENT "<<" ----"<<std::endl;
+
 	return EXIT_SUCCESS;
 
 }
