@@ -49,46 +49,48 @@ int main(int argc, char** argv)
 	if (argc > 3) datadir = argv[3];
     std::cout << "Will run " << nevents << " time(s), using " << datadir << " to get input features and output predictions (tb_input_features.dat and tb_output_predictions.dat)" << std::endl;
 
-    size_t vector_size_node_attr_in_bytes = sizeof(NODE_GROUP) *N_NODE_LAYER*NODE_DIM*N_GRAPH;
-    size_t vector_size_edge_attr_in_bytes = sizeof(EDGE_GROUP) *N_EDGE_LAYER*EDGE_DIM*N_GRAPH;
-    size_t vector_size_edge_index_in_bytes = sizeof(INDEX_GROUP) *N_EDGE_LAYER*TWO*N_GRAPH;
-    size_t vector_size_out_bytes = sizeof(OUT_GROUP) *N_EDGE_LAYER*LAYER11_OUT_DIM*N_GRAPH;
+    size_t vector_size_node_attr_in_bytes = sizeof(NODE_GROUP) *N_NODE_LAYER;
+    size_t vector_size_edge_attr_in_bytes = sizeof(EDGE_GROUP) *N_EDGE_LAYER;
+    size_t vector_size_edge_index_in_bytes = sizeof(INDEX_GROUP) *N_EDGE_LAYER;
+    size_t vector_size_out_bytes = sizeof(OUT_GROUP) *N_EDGE_LAYER;
     // Allocate Memory in Host Memory
     // When creating a buffer with user pointer (CL_MEM_USE_HOST_PTR), under the hood user ptr 
     // is used if it is properly aligned. when not aligned, runtime had no choice but to create
     // its own host side buffer. So it is recommended to use this allocator if user wish to
     // create buffer using CL_MEM_USE_HOST_PTR to align user buffer to page boundary. It will 
     // ensure that user buffer is used when user create Buffer/Mem object with CL_MEM_USE_HOST_PTR 
-    std::vector<NODE_GROUP,aligned_allocator<NODE_GROUP>> source_hw_node_attr_in(N_NODE_LAYER*NODE_DIM*N_GRAPH);
-    std::vector<EDGE_GROUP,aligned_allocator<EDGE_GROUP>> source_hw_edge_attr_in(N_EDGE_LAYER*EDGE_DIM*N_GRAPH);
-    std::vector<INDEX_GROUP,aligned_allocator<INDEX_GROUP>> source_hw_edge_index_in(N_EDGE_LAYER*TWO*N_GRAPH);
-    std::vector<OUT_GROUP,aligned_allocator<OUT_GROUP>> source_hw_results(N_EDGE_LAYER*LAYER11_OUT_DIM*N_GRAPH);
+    std::vector<NODE_GROUP,aligned_allocator<NODE_GROUP>> source_hw_node_attr_in(N_NODE_LAYER);
+    std::vector<EDGE_GROUP,aligned_allocator<EDGE_GROUP>> source_hw_edge_attr_in(N_EDGE_LAYER);
+    std::vector<INDEX_GROUP,aligned_allocator<INDEX_GROUP>> source_hw_edge_index_in(N_EDGE_LAYER);
+    std::vector<OUT_GROUP,aligned_allocator<OUT_GROUP>> source_hw_results(N_EDGE_LAYER);
 
 	//Reset the input data
-	for(int i0 = 0; i0 < N_NODE_LAYER*NODE_DIM*N_GRAPH; i0++) { 
+	for(int i0 = 0; i0 < N_NODE_LAYER; i0++) { 
     for(int j=0;j<N_NODE_GROUP;j++){
-		  source_hw_node_attr_in[i0].layer[j] = 0;
+      for(int k=0;k<NODE_DIM;k++){
+		    source_hw_node_attr_in[i0].layer[j][k] = 0;
+      }
     }
-		//std::cout<<(double)fpga.source_in[i0]<<std::endl;
 	}
-	for(int i0 = 0; i0 < N_EDGE_LAYER*EDGE_DIM*N_GRAPH; i0++) { 
+	for(int i0 = 0; i0 < N_EDGE_LAYER; i0++) { 
     for(int j=0;j<N_EDGE_GROUP;j++){
-      source_hw_edge_attr_in[i0].layer[j] = 0;
+      for(int k=0;k<EDGE_DIM;k++){
+        source_hw_edge_attr_in[i0].layer[j][k] = 0;
+      }
     }
-		//std::cout<<(double)fpga.source_in[i0]<<std::endl;
 	}
-	for(int i0 = 0; i0 < N_EDGE_LAYER*TWO*N_GRAPH; i0++) { 
+	for(int i0 = 0; i0 < N_EDGE_LAYER; i0++) { 
     for(int j=0;j<N_EDGE_GROUP;j++){
-		  source_hw_edge_index_in[i0].layer[j] = 0;
+      for(int k=0;k<TWO;k++){
+		    source_hw_edge_index_in[i0].layer[j][k] = 0;
+      }
     }
-		//std::cout<<(double)fpga.source_in[i0]<<std::endl;
 	}
 	//Reset the output result
-		for(int i0 = 0; i0 < N_EDGE_LAYER*LAYER11_OUT_DIM*N_GRAPH; i0++) { 
+		for(int i0 = 0; i0 < N_EDGE_LAYER; i0++) { 
       for(int j=0;j<N_EDGE_GROUP;j++){
-		    source_hw_results[i0].layer[j] = 0;
+		      source_hw_results[i0].layer[j] = 0;
       }
-		//std::cout<<(double)fpga.source_in[i0]<<std::endl;
 	}
 
 //---------------------------------------------------------------------------------------
@@ -100,7 +102,7 @@ int main(int argc, char** argv)
     cl::Device device = devices[0];
 
     cl::Context context(device);
-    cl::CommandQueue q(context, device, CL_QUEUE_PROFILING_ENABLE);
+    cl::CommandQueue q(context, device, CL_QUEUE_PROFILING_ENABLE | CL_QUEUE_OUT_OF_ORDER_EXEC_MODE_ENABLE);
     std::string device_name = device.getInfo<CL_DEVICE_NAME>(); 
     std::cout << "Found Device=" << device_name.c_str() << std::endl;
 	
@@ -155,6 +157,9 @@ int main(int argc, char** argv)
 
     auto t1 = Clock::now();
     auto t2 = Clock::now();
+    auto t3 = Clock::now();
+    auto t4 = Clock::now();
+    auto t5 = Clock::now();
 		
 //=====================
 //input
@@ -182,26 +187,32 @@ for(int e=0;e<N_GRAPH;e++){
     }
 	fin.close();
 
-	for (int i = 0; i < N_NODE_LAYER*NODE_DIM; i++) {
+	for (int i = 0; i < N_NODE_LAYER; i++) {
     for(int j=0;j<N_NODE_GROUP;j++){
-			source_hw_node_attr_in[e*N_NODE_LAYER*NODE_DIM+i].layer[j] = in[j*N_NODE_LAYER*NODE_DIM+i];
+      for(int k=0;k<NODE_DIM;k++){
+			  source_hw_node_attr_in[i].layer[j][k] = in[j*N_NODE_LAYER*NODE_DIM+i*NODE_DIM+k];
+      }
 		}
 	}
 	
-	for (int i = 0; i < N_EDGE_LAYER*EDGE_DIM; i++) {
+	for (int i = 0; i < N_EDGE_LAYER; i++) {
     for(int j=0;j<N_EDGE_GROUP;j++){
-			source_hw_edge_attr_in[e* N_EDGE_LAYER*EDGE_DIM+i].layer[j] = in[N_NODE*NODE_DIM+j*N_EDGE_LAYER*EDGE_DIM+i];
+      for(int k=0;k<EDGE_DIM;k++){
+			  source_hw_edge_attr_in[i].layer[j][k] = in[N_NODE*NODE_DIM+j*N_EDGE_LAYER*EDGE_DIM+i*EDGE_DIM+k];
+      }
 		}
 	}
 	
-	for (int i = 0; i < N_EDGE_LAYER*TWO; i++) {
+	for (int i = 0; i < N_EDGE_LAYER; i++) {
     for(int j=0;j<N_EDGE_GROUP;j++){
-			source_hw_edge_index_in[e*N_EDGE_LAYER*TWO+i].layer[j] = in[N_NODE*NODE_DIM + N_EDGE*EDGE_DIM+j*N_EDGE_LAYER*TWO+i];
+      for(int k=0;k<TWO;k++){
+			  source_hw_edge_index_in[i].layer[j][k] = in[N_NODE*NODE_DIM + N_EDGE*EDGE_DIM+j*N_EDGE_LAYER*TWO+i*TWO+k];
+      }
     }
 	}
-	for(int i = 0 ; i < N_EDGE_LAYER*LAYER11_OUT_DIM ; i++){
+	for(int i = 0 ; i < N_EDGE_LAYER ; i++){
     for(int j=0;j<N_EDGE_GROUP;j++){
-		source_hw_results[e*N_EDGE_LAYER*LAYER11_OUT_DIM+i].layer[j] = 0;
+		  source_hw_results[i].layer[j] = 0;
 	}
   }
   }
@@ -209,7 +220,7 @@ for(int e=0;e<N_GRAPH;e++){
   else{
     std::cout<<"ERROR: cannot load intput file\n";
   }
-}
+
   // if(fout.is_open()){
   //   std::cout<<"load with "<<out_data<<" \n";
   //   std::getline(fout,iline);
@@ -235,16 +246,21 @@ for(int e=0;e<N_GRAPH;e++){
         t1 = Clock::now();
         // Copy input data to device global memory
         q.enqueueMigrateMemObjects({buffer_node_attr_in,buffer_edge_attr_in,buffer_edge_index_in},0/* 0 means from host*/);
+        t2 = Clock::now();
         // Launch the Kernel
         // For HLS kernels global and local size is always (1,1,1). So, it is recommended
         // to always use enqueueTask() for invoking HLS kernel
         q.enqueueTask(krnl_aws_hls4ml);
+        t3 = Clock::now();
         // Copy Result from Device Global Memory to Host Local Memory
         q.enqueueMigrateMemObjects({buffer_output},CL_MIGRATE_MEM_OBJECT_HOST);
+        t4 = Clock::now();
         // Check for any errors from the command queue
-        q.finish();
-        t2 = Clock::now();
-        std::cout << "FPGA time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " ns" << std::endl;
+
+        std::cout << "input transfer time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1).count() << " ns" << std::endl;
+        std::cout << "kernel compute time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t3 - t2).count() << " ns" << std::endl;
+        std::cout << "output transfer time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t4 - t3).count() << " ns" << std::endl;
+
 
 
 
@@ -259,15 +275,17 @@ for(int e=0;e<N_GRAPH;e++){
 	// for(int i=0;i<N_EDGE_GROUP*N_EDGE_LAYER*LAYER11_OUT_DIM ;i++){
 	// 	std::cout << golden_target[i] << " ";
 	// }
-	for(int e=0;e<N_GRAPH;e++){
 	std::cout<<"Quantized predictions: \n";
-	for(int i=0;i<N_EDGE_LAYER*LAYER11_OUT_DIM ;i++){
+	for(int i=0;i<N_EDGE_LAYER ;i++){
     for(int j=0;j<N_EDGE_GROUP;j++){
-      std::cout << source_hw_results[e*N_EDGE_LAYER*LAYER11_OUT_DIM+i].layer[j]<< " ";
+      std::cout << source_hw_results[i].layer[j]<< " ";
     }
-		
-	}
   }
+  }
+  t4 = Clock::now();
+  q.finish();
+  t5 = Clock::now();
+  std::cout << "close FPGA time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(t5 - t4).count() << " ns" << std::endl;        
 	// std::cout << std::endl;
 	// std::cout<<"---- END EVENT "<<" ----"<<std::endl;
 

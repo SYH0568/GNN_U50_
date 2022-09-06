@@ -38,40 +38,49 @@ Description:
 
 
 extern "C" {
-void read_node_attr(const NODE_GROUP *node_attr_in,input_t node_attr_in_bigbuf[N_NODE_GROUP][N_NODE_LAYER*NODE_DIM],int g){
-	for (int i = 0; i < N_NODE_LAYER*NODE_DIM; i++) {
+void read_node_attr(const NODE_GROUP *node_attr_in,input_t node_attr_in_bigbuf[N_NODE_GROUP][N_NODE_LAYER*NODE_DIM]){
+	for (int i = 0; i < N_NODE_LAYER; i++) {
 		#pragma HLS PIPELINE
 		for(int j=0;j<N_NODE_GROUP;j++){
 			#pragma HLS UNROLL
-			node_attr_in_bigbuf[j][i] = node_attr_in[g*N_NODE_LAYER*NODE_DIM+i].layer[j];
+			for(int k=0;k<NODE_DIM;k++){
+				#pragma HLS UNROLL
+				node_attr_in_bigbuf[j][i*NODE_DIM+k] = node_attr_in[i].layer[j][k];
+			}
 		}
 	}
 }
-void read_edge_attr(const EDGE_GROUP *edge_attr_in,input3_t edge_attr_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*EDGE_DIM],int g){
+void read_edge_attr(const EDGE_GROUP *edge_attr_in,input3_t edge_attr_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*EDGE_DIM]){
 	
-	for (int i = 0; i < N_EDGE_LAYER*EDGE_DIM; i++) {
+	for (int i = 0; i < N_EDGE_LAYER; i++) {
 		#pragma HLS PIPELINE
 		for(int j=0;j<N_EDGE_GROUP;j++){
 			#pragma HLS UNROLL
-			edge_attr_in_bigbuf[j][i] = edge_attr_in[g* N_EDGE_LAYER*EDGE_DIM+i].layer[j];
+			for(int k=0;k<EDGE_DIM;k++){
+				#pragma HLS UNROLL
+				edge_attr_in_bigbuf[j][i*EDGE_DIM+k] = edge_attr_in[i].layer[j][k];
+			}
 		}
 	}
 }
-void read_edge_index(const INDEX_GROUP *edge_index_in,input4_t edge_index_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*TWO],int g){
-	for (int i = 0; i < N_EDGE_LAYER*TWO; i++) {
+void read_edge_index(const INDEX_GROUP *edge_index_in,input4_t edge_index_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*TWO]){
+	for (int i = 0; i < N_EDGE_LAYER; i++) {
 		#pragma HLS PIPELINE
 		for(int j=0;j<N_EDGE_GROUP;j++){
 			#pragma HLS UNROLL
-			edge_index_in_bigbuf[j][i] = edge_index_in[g*N_EDGE_LAYER*TWO+i].layer[j];
+			for(int k=0;k<TWO;k++){
+				#pragma HLS UNROLL
+				edge_index_in_bigbuf[j][i*TWO+k] = edge_index_in[i].layer[j][k];
+			}
 		}
 	}
 }
-void write_output(OUT_GROUP *out,layer11_t out_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*LAYER11_OUT_DIM],int g){
-	for (int i = 0; i < N_EDGE_LAYER*LAYER11_OUT_DIM; i++) {
+void write_output(OUT_GROUP *out,layer11_t out_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*LAYER11_OUT_DIM]){
+	for (int i = 0; i < N_EDGE_LAYER; i++) {
 		#pragma HLS PIPELINE
 		for(int j=0;j<N_EDGE_GROUP;j++){
 			#pragma HLS UNROLL
-			out[g*N_EDGE_LAYER*LAYER11_OUT_DIM+i].layer[j] = out_bigbuf[j][i];
+			out[i].layer[j] = out_bigbuf[j][i];
 		}
 	}
 }
@@ -92,6 +101,7 @@ void alveo_hls4ml(
     #pragma HLS INTERFACE s_axilite port=edge_index_in bundle=control
     #pragma HLS INTERFACE s_axilite port=out bundle=control
     #pragma HLS INTERFACE s_axilite port=return bundle=control
+	#pragma HLS INTERFACE ap_ctrl_chain  port=return bundle=control
 	#pragma HLS data_pack variable=node_attr_in
 	#pragma HLS data_pack variable=edge_attr_in
 	#pragma HLS data_pack variable=edge_index_in
@@ -123,12 +133,9 @@ void alveo_hls4ml(
 	// 		edge_index_in_bigbuf[j][i] = edge_index_in[i*N_EDGE_GROUP+j];
 	// 	}
 	// }
-	for(int i=0;i<N_GRAPH;i++){
-		#pragma HLS DATAFLOW
-		#pragma HLS INLINE
-	read_node_attr(node_attr_in,node_attr_in_bigbuf,i);
-	read_edge_attr(edge_attr_in,edge_attr_in_bigbuf,i);
-	read_edge_index(edge_index_in,edge_index_in_bigbuf,i);
+	read_node_attr(node_attr_in,node_attr_in_bigbuf);
+	read_edge_attr(edge_attr_in,edge_attr_in_bigbuf);
+	read_edge_index(edge_index_in,edge_index_in_bigbuf);
 
 
 	std::cout<<"------------------"<<std::endl;
@@ -138,8 +145,7 @@ void alveo_hls4ml(
 	std::cout<<"inf start"<<std::endl;
 	myproject(node_attr_in_bigbuf,edge_attr_in_bigbuf,edge_index_in_bigbuf,out_bigbuf);
 	std::cout<<"inf end"<<std::endl;
-	write_output(out,out_bigbuf,i);
-	}
+	write_output(out,out_bigbuf);
 
 	//=============================================
 	//output
