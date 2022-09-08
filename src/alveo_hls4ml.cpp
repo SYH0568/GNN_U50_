@@ -38,63 +38,94 @@ Description:
 
 
 extern "C" {
-void read_node_attr(const NODE_GROUP *node_attr_in,input_t node_attr_in_bigbuf[N_NODE_GROUP][N_NODE_LAYER*NODE_DIM],int g){
-	for (int i = 0; i < N_NODE_LAYER*NODE_DIM; i++) {
+void read_node_attr(const NODE_GROUP *node_attr_0_in,const NODE_GROUP *node_attr_1_in,const NODE_GROUP *node_attr_2_in,input_t node_attr_in_bigbuf[N_NODE_GROUP][N_NODE_LAYER*NODE_DIM],int g){
+	for (int i = 0; i < N_NODE_LAYER; i++) {
 		#pragma HLS PIPELINE
 		for(int j=0;j<N_NODE_GROUP;j++){
 			#pragma HLS UNROLL
-			node_attr_in_bigbuf[j][i] = node_attr_in[g*N_NODE_LAYER*NODE_DIM+i].layer[j];
+			node_attr_in_bigbuf[j][i*NODE_DIM] = node_attr_0_in[g*N_NODE_LAYER+i].attr[j];
+			node_attr_in_bigbuf[j][i*NODE_DIM+1] = node_attr_1_in[g*N_NODE_LAYER+i].attr[j];
+			node_attr_in_bigbuf[j][i*NODE_DIM+2] = node_attr_2_in[g*N_NODE_LAYER+i].attr[j];
 		}
 	}
 }
-void read_edge_attr(const EDGE_GROUP *edge_attr_in,input3_t edge_attr_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*EDGE_DIM],int g){
+void read_edge_attr(const EDGE_GROUP *edge_attr_0_in,const EDGE_GROUP *edge_attr_1_in,const EDGE_GROUP *edge_attr_2_in,const EDGE_GROUP *edge_attr_3_in,input3_t edge_attr_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*EDGE_DIM],int g){
 	
-	for (int i = 0; i < N_EDGE_LAYER*EDGE_DIM; i++) {
+	for (int i = 0; i < N_EDGE_LAYER; i++) {
 		#pragma HLS PIPELINE
 		for(int j=0;j<N_EDGE_GROUP;j++){
 			#pragma HLS UNROLL
-			edge_attr_in_bigbuf[j][i] = edge_attr_in[g* N_EDGE_LAYER*EDGE_DIM+i].layer[j];
+			edge_attr_in_bigbuf[j][i*EDGE_DIM] = edge_attr_0_in[g*N_EDGE_LAYER+i].attr[j];
+			edge_attr_in_bigbuf[j][i*EDGE_DIM+1] = edge_attr_1_in[g*N_EDGE_LAYER+i].attr[j];
+			edge_attr_in_bigbuf[j][i*EDGE_DIM+2] = edge_attr_2_in[g*N_EDGE_LAYER+i].attr[j];
+			edge_attr_in_bigbuf[j][i*EDGE_DIM+3] = edge_attr_3_in[g*N_EDGE_LAYER+i].attr[j];
 		}
 	}
+	
 }
-void read_edge_index(const INDEX_GROUP *edge_index_in,input4_t edge_index_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*TWO],int g){
-	for (int i = 0; i < N_EDGE_LAYER*TWO; i++) {
+void read_edge_index(const INDEX_GROUP *edge_index_s_in,const INDEX_GROUP *edge_index_r_in,input4_t edge_index_in_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*TWO],int g){
+	for (int i = 0; i < N_EDGE_LAYER; i++) {
 		#pragma HLS PIPELINE
 		for(int j=0;j<N_EDGE_GROUP;j++){
 			#pragma HLS UNROLL
-			edge_index_in_bigbuf[j][i] = edge_index_in[g*N_EDGE_LAYER*TWO+i].layer[j];
+			edge_index_in_bigbuf[j][i*TWO] = edge_index_s_in[g*N_EDGE_LAYER+i].index[j];
+			edge_index_in_bigbuf[j][i*TWO+1] = edge_index_r_in[g*N_EDGE_LAYER+i].index[j];
 		}
 	}
+	
 }
 void write_output(OUT_GROUP *out,layer11_t out_bigbuf[N_EDGE_GROUP][N_EDGE_LAYER*LAYER11_OUT_DIM],int g){
-	for (int i = 0; i < N_EDGE_LAYER*LAYER11_OUT_DIM; i++) {
+	for (int i = 0; i < N_EDGE_LAYER; i++) {
 		#pragma HLS PIPELINE
 		for(int j=0;j<N_EDGE_GROUP;j++){
 			#pragma HLS UNROLL
-			out[g*N_EDGE_LAYER*LAYER11_OUT_DIM+i].layer[j] = out_bigbuf[j][i];
+			out[g*N_EDGE_LAYER+i].attr[j] = out_bigbuf[j][i];
 		}
 	}
 }
 void alveo_hls4ml(
-	const NODE_GROUP *node_attr_in, // Read-Only Vector
-	const EDGE_GROUP *edge_attr_in, // Read-Only Vector
-	const INDEX_GROUP *edge_index_in, // Read-Only Vector
-
+	const NODE_GROUP *node_attr_0_in, // Read-Only Vector
+	const NODE_GROUP *node_attr_1_in, // Read-Only Vector
+	const NODE_GROUP *node_attr_2_in, // Read-Only Vector
+	const EDGE_GROUP *edge_attr_0_in, // Read-Only Vector
+	const EDGE_GROUP *edge_attr_1_in, // Read-Only Vector
+	const EDGE_GROUP *edge_attr_2_in, // Read-Only Vector
+	const EDGE_GROUP *edge_attr_3_in, // Read-Only Vector
+	const INDEX_GROUP *edge_index_s_in, // Read-Only Vector
+	const INDEX_GROUP *edge_index_r_in, // Read-Only Vector
 	OUT_GROUP *out       // Output Result
 	)
 {
-    #pragma HLS INTERFACE m_axi port=node_attr_in bundle=gmem0
-    #pragma HLS INTERFACE m_axi port=edge_attr_in bundle=gmem1
-    #pragma HLS INTERFACE m_axi port=edge_index_in bundle=gmem2
-    #pragma HLS INTERFACE m_axi port=out bundle=gmem3
-    #pragma HLS INTERFACE s_axilite port=node_attr_in bundle=control
-    #pragma HLS INTERFACE s_axilite port=edge_attr_in bundle=control
-    #pragma HLS INTERFACE s_axilite port=edge_index_in bundle=control
+    #pragma HLS INTERFACE m_axi port=node_attr_0_in bundle=gmem0
+    #pragma HLS INTERFACE m_axi port=node_attr_1_in bundle=gmem1
+    #pragma HLS INTERFACE m_axi port=node_attr_2_in bundle=gmem2
+    #pragma HLS INTERFACE m_axi port=edge_attr_0_in bundle=gmem3
+    #pragma HLS INTERFACE m_axi port=edge_attr_1_in bundle=gmem4
+    #pragma HLS INTERFACE m_axi port=edge_attr_2_in bundle=gmem5
+    #pragma HLS INTERFACE m_axi port=edge_attr_3_in bundle=gmem6
+    #pragma HLS INTERFACE m_axi port=edge_index_s_in bundle=gmem7
+    #pragma HLS INTERFACE m_axi port=edge_index_r_in bundle=gmem8
+    #pragma HLS INTERFACE m_axi port=out bundle=gmem9
+    #pragma HLS INTERFACE s_axilite port=node_attr_0_in bundle=control
+    #pragma HLS INTERFACE s_axilite port=node_attr_1_in bundle=control
+    #pragma HLS INTERFACE s_axilite port=node_attr_2_in bundle=control
+    #pragma HLS INTERFACE s_axilite port=edge_attr_0_in bundle=control
+    #pragma HLS INTERFACE s_axilite port=edge_attr_1_in bundle=control
+    #pragma HLS INTERFACE s_axilite port=edge_attr_2_in bundle=control
+    #pragma HLS INTERFACE s_axilite port=edge_attr_3_in bundle=control
+    #pragma HLS INTERFACE s_axilite port=edge_index_s_in bundle=control
+    #pragma HLS INTERFACE s_axilite port=edge_index_r_in bundle=control
     #pragma HLS INTERFACE s_axilite port=out bundle=control
     #pragma HLS INTERFACE s_axilite port=return bundle=control
-	#pragma HLS data_pack variable=node_attr_in
-	#pragma HLS data_pack variable=edge_attr_in
-	#pragma HLS data_pack variable=edge_index_in
+	#pragma HLS data_pack variable=node_attr_0_in
+	#pragma HLS data_pack variable=node_attr_1_in
+	#pragma HLS data_pack variable=node_attr_2_in
+	#pragma HLS data_pack variable=edge_attr_0_in
+	#pragma HLS data_pack variable=edge_attr_1_in
+	#pragma HLS data_pack variable=edge_attr_2_in
+	#pragma HLS data_pack variable=edge_attr_3_in
+	#pragma HLS data_pack variable=edge_index_s_in
+	#pragma HLS data_pack variable=edge_index_r_in
 	#pragma HLS data_pack variable=out
 	//necessary for hls4ml kernel, not used
 	#pragma HLS DATAFLOW
@@ -126,21 +157,20 @@ void alveo_hls4ml(
 	for(int i=0;i<N_GRAPH;i++){
 		#pragma HLS DATAFLOW
 		#pragma HLS INLINE
-	read_node_attr(node_attr_in,node_attr_in_bigbuf,i);
-	read_edge_attr(edge_attr_in,edge_attr_in_bigbuf,i);
-	read_edge_index(edge_index_in,edge_index_in_bigbuf,i);
+		read_node_attr(node_attr_0_in,node_attr_1_in,node_attr_2_in,node_attr_in_bigbuf,i);
+		read_edge_attr(edge_attr_0_in,edge_attr_1_in,edge_attr_2_in,edge_attr_3_in,edge_attr_in_bigbuf,i);
+		read_edge_index(edge_index_s_in,edge_index_r_in,edge_index_in_bigbuf,i);
 
 
-	std::cout<<"------------------"<<std::endl;
-	//=============================================
-	//input
-	//=============================================
-	std::cout<<"inf start"<<std::endl;
-	myproject(node_attr_in_bigbuf,edge_attr_in_bigbuf,edge_index_in_bigbuf,out_bigbuf);
-	std::cout<<"inf end"<<std::endl;
-	write_output(out,out_bigbuf,i);
+		std::cout<<"------------------"<<std::endl;
+		//=============================================
+		//input
+		//=============================================
+		std::cout<<"inf start"<<std::endl;
+		myproject(node_attr_in_bigbuf,edge_attr_in_bigbuf,edge_index_in_bigbuf,out_bigbuf);
+		std::cout<<"inf end"<<std::endl;
+		write_output(out,out_bigbuf,i);
 	}
-
 	//=============================================
 	//output
 	//=============================================

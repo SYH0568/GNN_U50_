@@ -32,18 +32,18 @@ typedef ap_fixed<8,5> model_default_t;
 #define N_GRAPH 10
 struct NODE_GROUP
 {
-    input_t layer[16];
+    input_t attr[16];
 };
 struct EDGE_GROUP
 {
-    input3_t layer[16];
+    input3_t attr[16];
 };
 struct INDEX_GROUP
 {
-    input4_t layer[16];
+    input4_t index[16];
 };
 struct OUT_GROUP
 {
-    layer11_t layer[16];
+    layer11_t attr[16];
 };
 #endif
